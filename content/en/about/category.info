@@ -9,6 +9,6 @@ FULL_TEXT={{
 
 	</p>
 	
-	$system{{pandoc -f markdown -t html https://raw.githubusercontent.com/patrickbr/saslcompiler/master/README.md}}
+	$system{{pandoc -f markdown -t html https://raw.githubusercontent.com/patrickbr/hagel/master/README.md}}
 }}
 IMG={{hail2.jpg}}
