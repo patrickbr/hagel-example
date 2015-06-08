@@ -3,6 +3,8 @@ hagel example page
 
 This is a basic example page of [hagel](http://github.com/patrickbr/hagel). See there for more info about hagel.
 
+A rendered version of this example can be found here: http://patrickbrosi.de/hagelexample
+
 Requirements
 ============
 
