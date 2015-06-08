@@ -1,1 +1,5 @@
+FOOTERMSG={{Copyright 2015 by Patrick Brosi}}
 PAGE_TITLE={{hagel example page}}
+HAGEL_GITHUB_LINK={{http://github.com/patrickbr/hagel}}
+PB_LINK={{http://patrickbrosi.de}}
+COPYRIGHT={{2015 <a href="$global{PB_LINK}">Patrick Brosi</a> - Template: <a href="http://startbootstrap.com/template-overviews/clean-blog/">clean-blog</a> by <a href="http://startbootstrap.com/">startbootstrap.com</a>}}

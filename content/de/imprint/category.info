@@ -1,0 +1,10 @@
+TITLE={{Imprint}}
+WEIGHT={{3}}
+IMG={{home-bg.jpg}}
+
+FULL_TEXT={{
+   <p>hagel example page - 2015 by <a href="$global{PB_LINK}">Patrick Brosi</a></p>
+   <p>The template of this site is almost completely based on <a href="http://startbootstrap.com/template-overviews/clean-blog/">clean-blog</a> by <a href="http://startbootstrap.com/">startbootstrap.com</a></p>
+   <p>Stock images not included in clean-blog are from <a href="https://stocksnap.io/">stocksnap.io</a></p>
+   <p>Download hagel at <a href="$global{HAGEL_GITHUB_LINK}">github</a>!
+}}
