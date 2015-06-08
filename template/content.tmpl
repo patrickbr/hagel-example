@@ -1,4 +1,20 @@
-<div class="content-fw">
-    <h1 class="content-title">$content{TITLE}</h1>
-    <div>$content{FULL_TEXT}</div>
+<header class="intro-header" style="background-image: url('$global{STATIC_PATH}img/about-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="site-heading">
+                    <h1>$content{TITLE}</h1>
+                    <hr class="small">
+                    <span class="subheading">$content{HEADER_TXT}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Main Content -->
+<div class="container">
+    <div class="row">
+        $content{FULL_TEXT}
+    </div>
 </div>

@@ -1,9 +1,12 @@
-<div id="$content{NAME}" class="content-row">
-	<div id="$content{NAME}_img" class="content-row-img">
-		$content{TEASER_IMG}
-	</div>
-	<div class="content-row-text">
-		<h2><a href="$content{URL}">$content{TITLE}</a></h2>
-		<div>$content{DESC} <a href="$content{URL}">Mehr lesen.</a></div>
-	</div>
+<div class="post-preview">
+    <a href="$content{URL}">
+        <h2 class="post-title">
+            $content{TITLE}
+        </h2>
+        <h3 class="post-subtitle">
+            $content{DESC}
+        </h3>
+    </a>
+    <p class="post-meta">Posted by <a href="#">$content{POSTED_BY}</a> on $content{POST_DATE}</p>
 </div>
+<hr>
