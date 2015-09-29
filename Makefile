@@ -59,7 +59,7 @@ $(var-def)
 	-e 's|$$content{WEIGHT}|0|g' -e 's|$$content{NAME}|$(CONTENT)|g' \
 	-e 's|$$global{INDEX_PATH}|$(I)|g' -e 's|$$global{STATIC_PATH}|$(S)|g' \
 	-e 's|$$global{LNEUT}|$(LNEUT)|g' \
-	-e 's|$$global{HOME}|$(subst //,/,$(B)$(subst /$(PLANG),,/$(LANG))$(I))|g' $@
+	-e 's|$$global{HOME}|$(subst //,/,$(B)/$(LANG)$(I))|g' $@
 
 @test -f $(P)/$(LANG)/global.info && cat $(P)/$(LANG)/global.info | tr '\n' ' ' | \
 	sed -e 's|\([$(ALLWD_VAR_CHRS)]*\)={{|\n\1={{|g' -e 's|\\|\\\\|g' \
@@ -119,7 +119,7 @@ $(R)/%.crow.r: $(P)/%.content $(T)/content_row.tmpl $$(wildcard $$(dir $$(P)/$$*
 
 .SECONDEXPANSION:
 $(R)/%.cmrow.r: $(P)/%.content $(T)/content_menu_row.tmpl | rndr_strc
-	@echo "Building $@" 
+	@echo "Building $@"
 	@cp $(T)/content_menu_row.tmpl $@
 	@sed -i -e '1s/^/$$__cnt_w{$$content{WEIGHT}} /'\
 		-e 's|$$content{ACTIVE}|$$__content_active_{$(basename $(notdir $<))}|g' $@
@@ -141,7 +141,7 @@ $(R)/%/crows.r:$$(patsubst $$(P)/$$(PR).content,$$(R)/$$(PR).crow.r,\
 .SECONDEXPANSION:
 $(R)/%/category.r: $(P)/%/category.info $(R)/%/cmrows.r $(R)/%/crows.r $(R)/lswitch.r \
   $$(strip $$(subst $$(lastword $$(subst /, ,$$(dir $$@)))/, ,$$(dir $$@)))menu.r \
-  $(T)/page.tmpl $(T)/category.tmpl $$(wildcard $$(dir $$(P)/$$*)category.tmpl) | rndr_strc
+  $(T)/page.tmpl $(T)/category.tmpl $$(wildcard $(P)/%/category.tmpl) | rndr_strc
 	@echo "Building $@"
 	@test -f $(P)/$*/page.tmpl && cp $(P)/$*/page.tmpl $@ || cp $(T)/page.tmpl $@
 	@test -f $(P)/$*/category.tmpl && sed -i \
@@ -160,12 +160,12 @@ $(R)/%/mrow.r: $(P)/%/category.info $(T)/category_menu_row.tmpl | rndr_strc
 	$(var-sub)
 
 	@sed -i -e 's|$$category{URL}|$(subst //,/,$(B)$(patsubst %/,%,$(patsubst\
-		/%,%,$(subst /$(PCONT),,$(subst /$(PLANG)/$(PCONT)/,/,/$*/))))$(I))|g' \
+		/%,%,$(subst /$(PCONT),,/$*/)))$(I))|g' \
 		-e 's|$$category{ACTIVE}|$$__category_active_{$(lastword\
 		$(subst /, ,$(subst $(notdir $@),,$(patsubst $(P)/%,%,$@))))}|g'\
 		-e 's|$$submenu{}|$$__category_submenu_{$(lastword\
 		$(subst /, ,$(subst $(notdir $@),,$(patsubst $(P)/%,%,$@))))}|g' $@
-    
+
 	@tr '\n' ' ' < $@ > $@.tmp && printf '\n' >> $@.tmp && mv -f $@.tmp $@
 
 $(R)/%/lrow.r: $(T)/lan_switch_row.tmpl | rndr_strc
