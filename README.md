@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/patrickbr/hagel-example.svg?branch=master)](https://travis-ci.org/patrickbr/hagel-example)
+
 hagel example page
 ==================
 
