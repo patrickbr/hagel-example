@@ -4,11 +4,11 @@ HEADER_TXT={{A small introduction}}
 FULL_TEXT={{
 	<p>
 	Everything following this paragraph was directly rendered from the github hosted README.md of hagel by using this syntax (pandoc is used to generate HTML from markdown):
-	<pre><code>$system{{pandoc -f markdown -t html https://raw.githubusercontent.com/patrickbr/hagel/master/README.md}}</code></pre>
+	<pre><code>&#36;system{{pandoc -f markdown -t html https://raw.githubusercontent.com/patrickbr/hagel/master/README.md}}</code></pre>
 	You can include the <code>stdout</code> of arbitrary system commands directly in the <code>template</code>, <code>*.info</code> or <code>*.content</code> files.
 
 	</p>
-	
+
 	$system{{pandoc -f markdown -t html https://raw.githubusercontent.com/patrickbr/hagel/master/README.md}}
 }}
 IMG={{hail2.jpg}}
